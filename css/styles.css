@@ -1,0 +1,208 @@
+:root {
+    --white: #ffffff;
+    --black: #212121;
+    --primary: #D95578;
+    --secondary: #F2F0F0;
+    --complementary: #F299B9;
+    --last: #637ABF;
+}
+
+/* GLOBAL */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*1 rem = 10px*/
+    scroll-snap-type: y mandatory;
+    margin-top: 2rem;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--complementary)
+}
+
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.8rem;
+    color: var(--primary);
+}
+
+h2 { font-size: 2.8rem; }
+
+h3 { font-size: 1.8rem; }
+
+h1, h2, h3 { text-align: center; }
+
+p {
+    font-size: 1.8rem;
+    color: var(--last)
+}
+
+a { text-decoration: none; }
+
+/* img { width: 100%; } */
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header__img {
+    max-height: 12rem;
+    border-radius: 3rem;
+}
+
+/* NAV */
+.nav {
+    background-color: var(--last);
+    padding: 1rem 0;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+.nav__link {
+    color: var(--complementary);
+    font-size: 2.5rem;
+    margin-right: 2rem;
+}
+.nav__link:last-of-type { margin-right: 0; }
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* PRODUCT */
+.product {
+    background-color: var(--secondary);
+    padding: 1rem;
+    text-align: center;
+}
+.product__img { width: 100%; }
+.product__name {
+    font-size: 3rem;
+    font-variant: small-caps;
+}
+.product__price {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+.product__name, .product__price {
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+/* GRAPHICS */
+.graphic {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.graphic__shirts {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    background-image: url('https://www.freelancinggig.com/blog/wp-content/uploads/2018/11/3.png');
+}
+.graphic__muscle {
+    background-image: url('https://vangogh.teespring.com/og_pic/18063494/19342842/front.jpg?v=2017-06-27-07-55&background-image=wood&effects=inner-glow');
+}
+
+/* US */
+.us {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    text-align: justify;
+}
+.us__image {
+    grid-row: 1 / 2;
+    padding: 1rem;
+    width: 100%;
+    background-size: cover;
+}
+.us__content {
+    padding: 1rem;
+}
+.us__content--text {
+    display: block;
+}
+
+/* BUY */
+.services {
+    color: var(--primary);
+}
+.blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+.block p, h3 {
+    margin: 0;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    background-color: var(--last);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__text {
+    color: var(--complementary);
+
+}
+
+/* QUERIES */
+/* Cellphone */
+@media (max-width: 480px) {
+    .titles {
+        font-size: 3rem;
+    }
+    .titles span {
+        display: none;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .graphic__muscle {
+        grid-row: 4 / 5;
+        grid-column: 1 / 4;
+    }
+    .us {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .us__image {
+        grid-column: 2 / 3;
+    }
+    .us__content--text {
+        display: none;
+    }
+    .blocks {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+
+}
